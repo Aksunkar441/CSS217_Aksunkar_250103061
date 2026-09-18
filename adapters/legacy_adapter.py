@@ -12,8 +12,7 @@ class OldPostalAdapter(ShippingRateProvider):
     """
 
     def __init__(self, service: OldPostalService):
-        # TODO: Store the adaptee instance in a private attribute (self._service)
-        raise NotImplementedError("Implement __init__ using composition")
+        self._service = service
 
     def get_quote(self, weight_kg: float, destination_zip: str) -> ShippingQuote:
         """
@@ -26,4 +25,28 @@ class OldPostalAdapter(ShippingRateProvider):
         6. Unpack transit_hours -> delivery_days: math.ceil(transit_hours / 24.0) (min 1).
         7. Return ShippingQuote(cost_usd, delivery_days, carrier_name='OldPostalService').
         """
-        raise NotImplementedError("Implement get_quote")
+        try:
+            zip_int = int(destination_zip)
+        except ValueError as e:
+            raise ShippingServiceException(
+                f"Invalid ZIP code for legacy postal service: {destination_zip}"
+            ) from e
+
+        weight_oz = weight_kg * 35.274
+
+        try:
+            response = self._service.compute_fare(weight_oz, zip_int)
+        except (OldPostalSocketTimeout, ValueError) as e:
+            raise ShippingServiceException(f"Legacy postal error: {e}") from e
+
+        fee_cents = response["data"]["fee_cents"]
+        transit_hours = response["data"]["transit_hours"]
+
+        cost_usd = round(fee_cents / 100.0, 2)
+        delivery_days = max(1, math.ceil(transit_hours / 24.0))
+
+        return ShippingQuote(
+            cost_usd=cost_usd,
+            delivery_days=delivery_days,
+            carrier_name="OldPostalService",
+        )

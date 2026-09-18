@@ -13,8 +13,7 @@ class FastFreightAdapter(ShippingRateProvider):
     EUR_TO_USD_EXCHANGE_RATE = 1.08
 
     def __init__(self, service: FastFreightCloud):
-        # TODO: Store the adaptee instance in a private attribute (self._service)
-        raise NotImplementedError("Implement __init__ using composition")
+        self._service = service
 
     def get_quote(self, weight_kg: float, destination_zip: str) -> ShippingQuote:
         """
@@ -27,4 +26,21 @@ class FastFreightAdapter(ShippingRateProvider):
         6. Delivery SLA is fixed at 2 days.
         7. Return ShippingQuote(cost_usd, delivery_days=2, carrier_name='FastFreightCloud').
         """
-        raise NotImplementedError("Implement get_quote")
+        grams = int(weight_kg * 1000)
+        payload = CarrierPayload(
+            weight_grams=grams,
+            postal_code_str=str(destination_zip).strip(),
+        )
+
+        try:
+            cost_eur = self._service.fetch_quote(payload)
+        except CarrierHttpError as e:
+            raise ShippingServiceException(f"FastFreight error: {e.message}") from e
+
+        cost_usd = round(cost_eur * self.EUR_TO_USD_EXCHANGE_RATE, 2)
+
+        return ShippingQuote(
+            cost_usd=cost_usd,
+            delivery_days=2,
+            carrier_name="FastFreightCloud",
+        )
