@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+env/
+Envs/
+Notebooks/
+projects/
+217_11.09.2026_250103061/
+.vscode/
