@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task19_IncomeTax {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface TaxStrategy {
         double calculateTax(double income);
@@ -30,7 +29,7 @@ class Task19_IncomeTax {
 
 class Task22_RouteTime {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface RouteStrategy {
         int estimateMinutes(int distanceKm);

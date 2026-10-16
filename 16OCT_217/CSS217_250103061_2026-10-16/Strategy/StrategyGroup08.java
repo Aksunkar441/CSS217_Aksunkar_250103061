@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task43_Thermostat {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CoolingStrategy {
         double getTargetTemp(int occupants);
@@ -30,7 +29,7 @@ class Task43_Thermostat {
 
 class Task46_SurgePricing {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface FareStrategy {
         double computeFare(double km);

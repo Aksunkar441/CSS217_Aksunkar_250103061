@@ -1,9 +1,8 @@
 import java.util.Arrays;
-import java.util.Locale;
 
 class Task39_HardwareClock {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface MillisecondTimer {
         long getElapsedMillis();
@@ -34,7 +33,7 @@ class Task39_HardwareClock {
 
 class Task42_GridFlattener {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface FlatDataReader {
         int[] readFlatArray();

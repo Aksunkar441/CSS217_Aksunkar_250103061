@@ -1,9 +1,8 @@
 import java.util.Arrays;
-import java.util.Locale;
 
 class Task01_DiscountEngine {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface DiscountStrategy {
         double applyDiscount(double price);
@@ -44,7 +43,7 @@ class Task01_DiscountEngine {
 
 class Task04_ArraySorting {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface SortStrategy {
         void sort(int[] data);

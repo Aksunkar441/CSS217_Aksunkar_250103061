@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task21_CsvExporter {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CsvExporter {
         String exportCsv();
@@ -29,7 +28,7 @@ class Task21_CsvExporter {
 
 class Task24_ConsoleLogger {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface AppLogger {
         void log(String level, String message);

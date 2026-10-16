@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task07_ShippingCost {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface ShippingStrategy {
         double calculate(double weightKg, double distanceKm);
@@ -30,7 +29,7 @@ class Task07_ShippingCost {
 
 class Task10_PasswordValidation {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface ValidationStrategy {
         boolean isValid(String password);

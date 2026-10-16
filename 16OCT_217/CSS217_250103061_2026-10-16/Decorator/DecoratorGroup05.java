@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task26_CarCustomizer {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Car {
         String getConfiguration();
@@ -64,7 +63,7 @@ class Task26_CarCustomizer {
 
 class Task29_RequestMiddleware {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface RequestHandler {
         String handle(String request);

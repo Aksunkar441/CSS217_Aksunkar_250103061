@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task02_CoffeeBilling {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Beverage {
         String getDescription();
@@ -64,7 +63,7 @@ class Task02_CoffeeBilling {
 
 class Task05_TextFormatter {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface TextComponent {
         String format(String input);

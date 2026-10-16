@@ -1,9 +1,8 @@
 import java.util.Arrays;
-import java.util.Locale;
 
 class Task45_RgbLuminance {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface GrayscalePixel {
         int getLuminance();
@@ -42,7 +41,7 @@ class Task45_RgbLuminance {
 
 class Task48_LifoStack {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface SimpleStack {
         void push(int val);

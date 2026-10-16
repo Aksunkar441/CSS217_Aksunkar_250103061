@@ -1,9 +1,8 @@
 import java.util.Arrays;
-import java.util.Locale;
 
 class Task25_GrayscaleFilter {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface PixelFilterStrategy {
         int[] applyFilter(int[] pixels);
@@ -37,7 +36,7 @@ class Task25_GrayscaleFilter {
 
 class Task28_LoanInterest {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface InterestStrategy {
         double computeInterest(double principal, int years);

@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task08_PizzaToppings {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Pizza {
         String getDetails();
@@ -64,7 +63,7 @@ class Task08_PizzaToppings {
 
 class Task11_Notifications {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Notifier {
         String send(String msg);

@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task09_Speedometer {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface MetricSpeedometer {
         double getSpeedKmh();
@@ -29,14 +28,14 @@ class Task09_Speedometer {
 
 class Task12_AudioPlayer {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface MediaPlayer {
         void playAudio(String filename);
     }
     static class VlcEngine {
         void startPlayback(String filepath, int volume){
-            System.out.printf("%s at volume %d", filepath, volume);
+            System.out.println(filepath + " at volume " + volume);
         }
     }
     static class VlcAdapter implements MediaPlayer {
@@ -52,6 +51,5 @@ class Task12_AudioPlayer {
     public static void main(String[] args) {
         show(12, "VLC adapter", "playing below:");
         new VlcAdapter(new VlcEngine()).playAudio("song.mp3");
-        System.out.println();
     }
 }

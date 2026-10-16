@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task15_PolarCoordinates {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CartesianPoint {
         double getX();
@@ -42,14 +41,14 @@ class Task15_PolarCoordinates {
 
 class Task18_CurrencyGateway {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface UsdPaymentProcessor {
         void payInUsd(double dollars);
     }
     static class InrBankGateway {
         void processRupees(double rupees){
-            System.out.printf(Locale.ROOT, "INR %.2f", rupees);
+            System.out.println("INR " + rupees);
         }
     }
     static class CurrencyAdapter implements UsdPaymentProcessor {
@@ -65,6 +64,5 @@ class Task18_CurrencyGateway {
     public static void main(String[] args) {
         show(18, "USD payment adapter", "paying below:");
         new CurrencyAdapter(new InrBankGateway()).payInUsd(10);
-        System.out.println();
     }
 }

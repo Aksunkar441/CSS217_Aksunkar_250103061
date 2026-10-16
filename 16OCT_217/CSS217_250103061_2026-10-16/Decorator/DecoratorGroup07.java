@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task38_TokenGenerator {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface TokenGenerator {
         String generate(String seed);
@@ -53,7 +52,7 @@ class Task38_TokenGenerator {
 
 class Task41_BurgerKiosk {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Burger {
         String getIngredients();

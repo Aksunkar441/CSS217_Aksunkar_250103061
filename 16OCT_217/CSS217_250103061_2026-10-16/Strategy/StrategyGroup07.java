@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task37_GradingScale {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface GradingStrategy {
         String evaluate(int score);
@@ -30,7 +29,7 @@ class Task37_GradingScale {
 
 class Task40_ArraySearch {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface SearchStrategy {
         int findIndex(int[] sortedArr, int target);

@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task20_GymMembership {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface Membership {
         String getPerks();
@@ -64,7 +63,7 @@ class Task20_GymMembership {
 
 class Task23_BbcodeTags {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface FormattedText {
         String render();

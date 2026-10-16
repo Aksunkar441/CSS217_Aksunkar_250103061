@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task50_WeatherAlert {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CelsiusSensor {
         double getCelsius();

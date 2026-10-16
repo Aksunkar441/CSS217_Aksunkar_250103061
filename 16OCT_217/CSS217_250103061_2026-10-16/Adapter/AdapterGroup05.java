@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task27_ContractorStaff {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface StaffMember {
         String getFullName();
@@ -47,7 +46,7 @@ class Task27_ContractorStaff {
 
 class Task30_BatteryMonitor {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface PercentageBattery {
         int getBatteryPercent();

@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task14_RpgArmor {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CharacterDefense {
         int getArmorRating();
@@ -52,7 +51,7 @@ class Task14_RpgArmor {
 
 class Task17_DataStreamSecurity {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface DataSource {
         String readData();

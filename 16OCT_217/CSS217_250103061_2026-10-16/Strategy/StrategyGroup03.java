@@ -1,8 +1,7 @@
-import java.util.Locale;
 
 class Task13_RpgAttack {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface AttackStrategy {
         int computeDamage(int baseStrength);
@@ -30,7 +29,7 @@ class Task13_RpgAttack {
 
 class Task16_StringCompression {
     private static void show(int n, String title, Object result) {
-        System.out.printf(Locale.ROOT, "%02d. %-38s %s%n", n, title, result);
+        System.out.println(n + ". " + title + ": " + result);
     }
     interface CompressionStrategy {
         String compress(String rawData);
